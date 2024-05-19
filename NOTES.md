@@ -1,10 +1,10 @@
 ## Create a Server folder
 
-mkdir Server
+mkdir server
 
 ## initialize Go app
 
-go mod init github/com/tomdoestech/go-react-todo
+go mod init github.com/tomdoestech/go-react-todo
 
 ## Install Riber v2
 
