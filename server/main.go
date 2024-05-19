@@ -31,6 +31,8 @@ func main(){
 		if err := c.BodyParser(todo); err != nil {
 			return err
 		}
+		todo.ID = len(todos) + 1
+		todos = append(todos, *todo)
 	})
 
 	log.Fatal(app.Listen(":4000"))
