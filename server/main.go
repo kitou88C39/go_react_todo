@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -14,4 +15,6 @@ func main(){
 	app.Get("/healthchecl", func(c *fiber.Ctx) error {
 		return c.SendString("OK")
 	})
+
+	log.Fatal(app.Listen(":4000"))
 }
