@@ -19,6 +19,12 @@ func main(){
 
 	app := fiber.New()
 
+	todos := []Todo{}
+
+	app.Get("/healthchecl", func(c *fiber.Ctx) error {
+		return c.SendString("OK")
+	})
+
 	app.Get("/healthchecl", func(c *fiber.Ctx) error {
 		return c.SendString("OK")
 	})
