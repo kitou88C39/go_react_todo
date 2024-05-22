@@ -25,7 +25,14 @@ function AddTodo() {
             placeholder='What do you want to do?'
             {...form.getInputProps('title')}
           />
-          <Textarea />
+          <Textarea
+            required
+            mb={12}
+            label='Body'
+            placeholder='Tell me more...'
+            {...form.getInputProps('body')}
+          />
+
           <Button type='submit'>Create todo</Button>
         </form>
       </Modal>
