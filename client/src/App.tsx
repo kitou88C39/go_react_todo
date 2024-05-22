@@ -18,6 +18,11 @@ const fetcher = (url: string) =>
 
 function App() {
   const { data, mutate } = useSWR<Todo[]>('api/todos', fetcher);
+
+  function markTodoAdDone() {
+    const updated = await fetch;
+  }
+
   return (
     <Box
       sx={(theme) => ({
@@ -37,7 +42,7 @@ function App() {
                   <CheckCircleFillIcon size={20} />
                 </ThemeIcon>
               ) : (
-                <ThemeIcon color='teal' size={24} radius='xl'>
+                <ThemeIcon color='gray' size={24} radius='xl'>
                   <CheckCircleFillIcon size={20} />
                 </ThemeIcon>
               )}
