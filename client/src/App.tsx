@@ -1,4 +1,5 @@
-import { Box, List } from '@mantine/core';
+import { Box, List, ThemeIcon } from '@mantine/core';
+import { CheckCircleFillIcon } from '@primer/octicons-react';
 import useSWR from 'swr';
 import './App.css';
 import AddTodo from './components/AddTodo';
@@ -29,7 +30,13 @@ function App() {
       <List spacing='xs' size='sm' mb={12} center>
         {data?.map((todo) => {
           return (
-            <List.Item key={`todo_list__${todo.id}`}>{todo.title}</List.Item>
+            <List.Item key={`todo_list__${todo.id}`}>
+              icon={todo.done ? (<ThemeIcon>
+                <CheckCircleFillIcon/>
+
+              </ThemeIcon>):()}
+              {todo.title}
+            </List.Item>
           );
         })}
       </List>
