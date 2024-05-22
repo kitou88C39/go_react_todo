@@ -5,5 +5,8 @@
     "@primer/octicons-react": "^19.9.0",
     "react": "^18.3.1",
     "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.2"
   }
 }

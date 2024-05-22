@@ -12,10 +12,12 @@ function AddTodo() {
     },
   });
 
+  function createTodo() {}
+
   return (
     <>
       <Modal opened={open} onClose={() => setOpen(false)} title='Create todo'>
-        <form>
+        <form onSubmit={form.onSubmit(createTodo)}>
           <TextInput />
           <Textarea />
           <Button type='submit'>Create todo</Button>
