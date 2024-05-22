@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { useForm } from '@mantine/hooks';
+import { useForm } from '@mantine/form'; // 修正: '@mantine/hooks' から '@mantine/form' へ変更
 import { Button, Modal, Group, TextInput, Textarea } from '@mantine/core';
 import { ENDPOINT } from '../App';
+import { KeyedMutator } from 'swr';
 
-function AddTodo() {
+function AddTodo({ mutate }: KeyedMutator) {
   const [open, setOpen] = useState(false);
 
   const form = useForm({
