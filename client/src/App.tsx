@@ -31,10 +31,16 @@ function App() {
         {data?.map((todo) => {
           return (
             <List.Item key={`todo_list__${todo.id}`}>
-              icon={todo.done ? (<ThemeIcon>
-                <CheckCircleFillIcon/>
-
-              </ThemeIcon>):()}
+              icon=
+              {todo.done ? (
+                <ThemeIcon color='teal' size={24} radius='xl'>
+                  <CheckCircleFillIcon size={20} />
+                </ThemeIcon>
+              ) : (
+                <ThemeIcon color='teal' size={24} radius='xl'>
+                  <CheckCircleFillIcon size={20} />
+                </ThemeIcon>
+              )}
               {todo.title}
             </List.Item>
           );
