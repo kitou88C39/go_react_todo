@@ -19,7 +19,10 @@ function AddTodo() {
       headers: {
         'Content-Type': 'application/json',
       },
-    });
+      body: JSON.stringify(values),
+    }).then((r) => r.json());
+    form.reset();
+    setOpen(false);
   }
 
   return (
