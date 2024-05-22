@@ -13,8 +13,13 @@ function AddTodo() {
     },
   });
 
-  function createTodo(values: { title: string; body: string }) {
-    const updated = await fetch(`${ENDPOINT}`);
+  async function createTodo(values: { title: string; body: string }) {
+    const updated = await fetch(`${ENDPOINT}/api/todos`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
   }
 
   return (
