@@ -45,9 +45,12 @@ func main(){
 		for i, t := range todos {
 			if t.ID == id {
 				todos[i].Done = true
+				break
 			}
 		}
+		return c.JSON(todos)
 	})
+
 
 	log.Fatal(app.Listen(":4000"))
 }
