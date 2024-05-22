@@ -12,7 +12,7 @@ function App() {
   return (
     <Box>
       {JSON.stringify(data)}
-      <AddTodo />
+      <AddTodo mutate={mutate} />
     </Box>
   );
 }
