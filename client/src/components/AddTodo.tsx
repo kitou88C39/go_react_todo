@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm } from '@mantine/hooks';
 import { Button, Modal, Group, TextInput, Textarea } from '@mantine/core';
+import { ENDPOINT } from '../App';
 
 function AddTodo() {
   const [open, setOpen] = useState(false);
@@ -12,7 +13,9 @@ function AddTodo() {
     },
   });
 
-  function createTodo() {}
+  function createTodo(values: { title: string; body: string }) {
+    const updated = await fetch(`${ENDPOINT}`);
+  }
 
   return (
     <>
