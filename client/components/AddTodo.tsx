@@ -1,5 +1,14 @@
 import { useState } from 'react';
-const [open, setOpen] = useState(false);
+import { useForm } from '@mantine/hooks';
 
-function AddTodo() {}
+function AddTodo() {
+  const [open, setOpen] = useState(false);
+
+  const form = useForm({
+    initalValues: {
+      title: '',
+      body: '',
+    },
+  });
+}
 export default AddTodo;
