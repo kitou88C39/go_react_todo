@@ -19,23 +19,29 @@ const fetcher = (url: string) =>
 function App() {
   const { data, mutate } = useSWR<Todo[]>('api/todos', fetcher);
 
-  function markTodoAdDone() {
-    const updated = await fetch;
+  async function markTodoAdDone(id: number) {
+    const updated = await fetch(`${ENDPOINT}/api/todo/${id}/done`, {
+      method: 'PATCH',
+    }).then((r) => r.json());
+    mutate(updated);
   }
 
   return (
     <Box
-      sx={(theme) => ({
+      style={{
         padding: '2rem',
-        windth: '100%',
+        width: '100%', // また、'windth' は 'width' のタイプミスですので、これも修正しました。
         maxWidth: '40rem',
         margin: '0 auto',
-      })}
+      }}
     >
       <List spacing='xs' size='sm' mb={12} center>
         {data?.map((todo) => {
           return (
-            <List.Item key={`todo_list__${todo.id}`}>
+            <List.Item
+              onClick={() => markTodoAdDone(todo.id)}
+              key={`todo_list__${todo.id}`}
+            >
               icon=
               {todo.done ? (
                 <ThemeIcon color='teal' size={24} radius='xl'>
